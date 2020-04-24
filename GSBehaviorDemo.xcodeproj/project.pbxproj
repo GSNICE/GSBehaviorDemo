@@ -22,6 +22,7 @@
 		8684F80C2451E4FC00E1DB79 /* GSBehaviorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F80B2451E4FC00E1DB79 /* GSBehaviorData.m */; };
 		8684F80F2451ECC900E1DB79 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F80E2451ECC900E1DB79 /* NextViewController.m */; };
 		8684F8122451F40600E1DB79 /* NSObject+GSAspectsHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */; };
+		8684F81524529E1A00E1DB79 /* GSBehaviorDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F81424529E1A00E1DB79 /* GSBehaviorDataCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		8684F80E2451ECC900E1DB79 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		8684F8102451F40600E1DB79 /* NSObject+GSAspectsHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GSAspectsHook.h"; sourceTree = "<group>"; };
 		8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GSAspectsHook.m"; sourceTree = "<group>"; };
+		8684F81324529E1A00E1DB79 /* GSBehaviorDataCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSBehaviorDataCache.h; sourceTree = "<group>"; };
+		8684F81424529E1A00E1DB79 /* GSBehaviorDataCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSBehaviorDataCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				8684F80B2451E4FC00E1DB79 /* GSBehaviorData.m */,
 				8684F8072451E20500E1DB79 /* GSBehaviorDataManager.h */,
 				8684F8082451E20500E1DB79 /* GSBehaviorDataManager.m */,
+				8684F81324529E1A00E1DB79 /* GSBehaviorDataCache.h */,
+				8684F81424529E1A00E1DB79 /* GSBehaviorDataCache.m */,
 				8684F8102451F40600E1DB79 /* NSObject+GSAspectsHook.h */,
 				8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */,
 			);
@@ -308,6 +313,7 @@
 				8684F8092451E20500E1DB79 /* GSBehaviorDataManager.m in Sources */,
 				8684F80F2451ECC900E1DB79 /* NextViewController.m in Sources */,
 				8684F7D32451D47700E1DB79 /* ViewController.m in Sources */,
+				8684F81524529E1A00E1DB79 /* GSBehaviorDataCache.m in Sources */,
 				8684F8062451D71700E1DB79 /* UIViewController+GSHook.m in Sources */,
 				8684F8122451F40600E1DB79 /* NSObject+GSAspectsHook.m in Sources */,
 				8684F7CD2451D47700E1DB79 /* AppDelegate.m in Sources */,

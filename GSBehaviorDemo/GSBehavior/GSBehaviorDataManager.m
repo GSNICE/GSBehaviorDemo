@@ -6,6 +6,7 @@
 //  Copyright © 2020 GSNICE. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "GSBehaviorDataManager.h"
 #import "NSObject+GSAspectsHook.h"
 
@@ -18,6 +19,27 @@
 @end
 
 @implementation GSBehaviorDataManager
+
++ (void)load {
+    //杀死程序 (但当程序位于后台呗杀死不执行)
+    __block id observer1 = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillTerminateNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        NSLog(@"杀死程序---将数据写入本地");
+        //将数据写入本地
+//        [[KTBehaviorDataManager sharedManager] writeBehaviorData];
+
+        [[NSNotificationCenter defaultCenter] removeObserver:observer1];
+    }];
+    
+    
+    //程序切换至后台
+    __block id observer2 = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        NSLog(@"程序切换至后台---将数据写入本地");
+        //将数据写入本地
+//        [[KTBehaviorDataManager sharedManager] writeBehaviorData];
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:observer2];
+    }];
+}
 
 + (instancetype)sharedManager {
     static GSBehaviorDataManager *sharedInstaller = nil;
@@ -73,6 +95,12 @@
     NSDate *date2 = [NSDate dateWithTimeIntervalSince1970:[endTime doubleValue]];
     NSTimeInterval seconds = [date2 timeIntervalSinceDate:date];
     NSLog(@"Controller:%@ | 进入:%@ | 离开:%@ | 间隔%0.0f秒",data.page_code,data.start_time,data.end_time,seconds/1000.0f);
+}
+
+#pragma mark - private method
+- (void)writeBehaviorData {
+    
+//    [KTBehaviorDataCache writeWithData:[self.data dicValue] storageType:kBehaviorLogData];
 }
 
 #pragma mark - Lazying...
