@@ -23,6 +23,10 @@
 		8684F80F2451ECC900E1DB79 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F80E2451ECC900E1DB79 /* NextViewController.m */; };
 		8684F8122451F40600E1DB79 /* NSObject+GSAspectsHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */; };
 		8684F81524529E1A00E1DB79 /* GSBehaviorDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F81424529E1A00E1DB79 /* GSBehaviorDataCache.m */; };
+		8684F8182452A80500E1DB79 /* GSBehaviorDataUpLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F8172452A80500E1DB79 /* GSBehaviorDataUpLoader.m */; };
+		8684F81B24531A3500E1DB79 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F81924531A3400E1DB79 /* Aspects.m */; };
+		8684F81F24532AA300E1DB79 /* GSBehaviorDemo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8684F81E24532AA300E1DB79 /* GSBehaviorDemo.plist */; };
+		8684F82224532B1D00E1DB79 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F82124532B1D00E1DB79 /* ButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,13 @@
 		8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GSAspectsHook.m"; sourceTree = "<group>"; };
 		8684F81324529E1A00E1DB79 /* GSBehaviorDataCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSBehaviorDataCache.h; sourceTree = "<group>"; };
 		8684F81424529E1A00E1DB79 /* GSBehaviorDataCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSBehaviorDataCache.m; sourceTree = "<group>"; };
+		8684F8162452A80500E1DB79 /* GSBehaviorDataUpLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSBehaviorDataUpLoader.h; sourceTree = "<group>"; };
+		8684F8172452A80500E1DB79 /* GSBehaviorDataUpLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSBehaviorDataUpLoader.m; sourceTree = "<group>"; };
+		8684F81924531A3400E1DB79 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		8684F81A24531A3400E1DB79 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		8684F81E24532AA300E1DB79 /* GSBehaviorDemo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GSBehaviorDemo.plist; sourceTree = "<group>"; };
+		8684F82024532B1D00E1DB79 /* ButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
+		8684F82124532B1D00E1DB79 /* ButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +145,8 @@
 				8684F7D22451D47700E1DB79 /* ViewController.m */,
 				8684F80D2451ECC900E1DB79 /* NextViewController.h */,
 				8684F80E2451ECC900E1DB79 /* NextViewController.m */,
+				8684F82024532B1D00E1DB79 /* ButtonView.h */,
+				8684F82124532B1D00E1DB79 /* ButtonView.m */,
 				8684F7D42451D47700E1DB79 /* Main.storyboard */,
 				8684F7D72451D47800E1DB79 /* Assets.xcassets */,
 				8684F7D92451D47800E1DB79 /* LaunchScreen.storyboard */,
@@ -164,16 +177,21 @@
 		8684F8002451D52500E1DB79 /* GSBehavior */ = {
 			isa = PBXGroup;
 			children = (
-				8684F8012451D53300E1DB79 /* GSHook.h */,
-				8684F8022451D53300E1DB79 /* GSHook.m */,
-				8684F8042451D71700E1DB79 /* UIViewController+GSHook.h */,
-				8684F8052451D71700E1DB79 /* UIViewController+GSHook.m */,
+				8684F81E24532AA300E1DB79 /* GSBehaviorDemo.plist */,
+				8684F81A24531A3400E1DB79 /* Aspects.h */,
+				8684F81924531A3400E1DB79 /* Aspects.m */,
 				8684F80A2451E4FC00E1DB79 /* GSBehaviorData.h */,
 				8684F80B2451E4FC00E1DB79 /* GSBehaviorData.m */,
 				8684F8072451E20500E1DB79 /* GSBehaviorDataManager.h */,
 				8684F8082451E20500E1DB79 /* GSBehaviorDataManager.m */,
 				8684F81324529E1A00E1DB79 /* GSBehaviorDataCache.h */,
 				8684F81424529E1A00E1DB79 /* GSBehaviorDataCache.m */,
+				8684F8162452A80500E1DB79 /* GSBehaviorDataUpLoader.h */,
+				8684F8172452A80500E1DB79 /* GSBehaviorDataUpLoader.m */,
+				8684F8012451D53300E1DB79 /* GSHook.h */,
+				8684F8022451D53300E1DB79 /* GSHook.m */,
+				8684F8042451D71700E1DB79 /* UIViewController+GSHook.h */,
+				8684F8052451D71700E1DB79 /* UIViewController+GSHook.m */,
 				8684F8102451F40600E1DB79 /* NSObject+GSAspectsHook.h */,
 				8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */,
 			);
@@ -284,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8684F7DB2451D47800E1DB79 /* LaunchScreen.storyboard in Resources */,
+				8684F81F24532AA300E1DB79 /* GSBehaviorDemo.plist in Resources */,
 				8684F7D82451D47800E1DB79 /* Assets.xcassets in Resources */,
 				8684F7D62451D47700E1DB79 /* Main.storyboard in Resources */,
 			);
@@ -311,14 +330,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8684F8092451E20500E1DB79 /* GSBehaviorDataManager.m in Sources */,
+				8684F81B24531A3500E1DB79 /* Aspects.m in Sources */,
 				8684F80F2451ECC900E1DB79 /* NextViewController.m in Sources */,
 				8684F7D32451D47700E1DB79 /* ViewController.m in Sources */,
+				8684F82224532B1D00E1DB79 /* ButtonView.m in Sources */,
 				8684F81524529E1A00E1DB79 /* GSBehaviorDataCache.m in Sources */,
 				8684F8062451D71700E1DB79 /* UIViewController+GSHook.m in Sources */,
 				8684F8122451F40600E1DB79 /* NSObject+GSAspectsHook.m in Sources */,
 				8684F7CD2451D47700E1DB79 /* AppDelegate.m in Sources */,
 				8684F7DE2451D47800E1DB79 /* main.m in Sources */,
 				8684F8032451D53300E1DB79 /* GSHook.m in Sources */,
+				8684F8182452A80500E1DB79 /* GSBehaviorDataUpLoader.m in Sources */,
 				8684F7D02451D47700E1DB79 /* SceneDelegate.m in Sources */,
 				8684F80C2451E4FC00E1DB79 /* GSBehaviorData.m in Sources */,
 			);
@@ -492,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9G4F2Y799;
 				INFOPLIST_FILE = GSBehaviorDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9G4F2Y799;
 				INFOPLIST_FILE = GSBehaviorDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

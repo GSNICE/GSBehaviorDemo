@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GSBehaviorDataManager.h"
 #import "NSObject+GSAspectsHook.h"
+#import "GSBehaviorDataCache.h"
 
 @interface GSBehaviorDataManager ()
 
@@ -22,22 +23,22 @@
 
 + (void)load {
     //杀死程序 (但当程序位于后台呗杀死不执行)
-    __block id observer1 = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillTerminateNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    __block id observer_Terminate = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillTerminateNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         NSLog(@"杀死程序---将数据写入本地");
-        //将数据写入本地
-//        [[KTBehaviorDataManager sharedManager] writeBehaviorData];
+        //  将数据写入本地
+        [[GSBehaviorDataManager sharedManager] writeBehaviorData];
 
-        [[NSNotificationCenter defaultCenter] removeObserver:observer1];
+        [[NSNotificationCenter defaultCenter] removeObserver:observer_Terminate];
     }];
     
     
     //程序切换至后台
-    __block id observer2 = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    __block id observer_EnterBackground = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         NSLog(@"程序切换至后台---将数据写入本地");
-        //将数据写入本地
-//        [[KTBehaviorDataManager sharedManager] writeBehaviorData];
+        //  将数据写入本地
+        [[GSBehaviorDataManager sharedManager] writeBehaviorData];
         
-        [[NSNotificationCenter defaultCenter] removeObserver:observer2];
+        [[NSNotificationCenter defaultCenter] removeObserver:observer_EnterBackground];
     }];
 }
 
@@ -100,10 +101,36 @@
 #pragma mark - private method
 - (void)writeBehaviorData {
     
-//    [KTBehaviorDataCache writeWithData:[self.data dicValue] storageType:kBehaviorLogData];
+    [GSBehaviorDataCache writeWithData:[self.data dicValue] storageType:kBehaviorLogData];
 }
 
 #pragma mark - Lazying...
+- (GSBehaviorUpLoadData *)data {
+    if (_data == nil) {
+        _data = [[GSBehaviorUpLoadData alloc] init];
+        _data.app_type = @"1";
+        _data.app_version = @"版本";
+        _data.device_id = @"设备号";
+        _data.os_type = @"1";
+        _data.os_version = [[UIDevice currentDevice] systemVersion];
+        _data.user_id = @"10001";
+        _data.login_account = @"183****0988";
+        _data.screen = @"分辨率";
+        _data.datas = (NSMutableArray <GSBehaviorData *>*)[NSMutableArray array];
+        NSDictionary *datas = [GSBehaviorDataCache readWithStorageType:kBehaviorLogData];
+        for (NSDictionary *temp in datas[@"datas"]) {
+            // 字典转模型、懒得引库了。
+//            KTBehaviorData *model = [[KTBehaviorData ne] initWithDictionary:temp error:nil];
+            // 假数据
+            GSBehaviorData *model = [GSBehaviorData new];
+            model.op_type = @"旧数据重载";
+            [_data.datas addObject:model];
+        }
+  
+        NSLog(@"数据初始化完成---%ld",_data.datas.count);
+    }
+    return _data;
+}
 - (NSMutableDictionary *)startTimeDic {
     if (!_startTimeDic) {
         _startTimeDic = [NSMutableDictionary new];

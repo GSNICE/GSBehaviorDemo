@@ -9,6 +9,7 @@
 #import "GSBehaviorDataCache.h"
 
 NSString *const FileName = @"LocalStorage";
+NSString *const kBehaviorLogData = @"kBehaviorLogData";
 
 @interface GSBehaviorDataCache ()
 
@@ -22,13 +23,13 @@ NSString *const FileName = @"LocalStorage";
     static GSBehaviorDataCache *sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedManager = [[self allocWithZone:NULL] init];
+        sharedManager = [[super allocWithZone:NULL] init];
     });
     return sharedManager;
 }
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
-    return [GSBehaviorDataCache sharedManager];
+    return [self sharedManager];
 }
 
 //- (id)copyWithZone:(nullable NSZone *)zone {
@@ -42,7 +43,7 @@ NSString *const FileName = @"LocalStorage";
 #pragma mark - 写入（归档）
 + (BOOL)writeWithData:(id)data storageType:(NSString *)type {
     GSBehaviorDataCache *manager = [GSBehaviorDataCache sharedManager];
-    NSString *path = [manager.storagePath stringByAppendingString:type];
+    NSString *path = [manager.storagePath stringByAppendingPathComponent:type];
     NSData *temp = [NSKeyedArchiver archivedDataWithRootObject:data];
     return [NSKeyedArchiver archiveRootObject:temp toFile:path];
 }

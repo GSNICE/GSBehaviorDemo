@@ -11,6 +11,9 @@
 #import "GSBehaviorDataManager.h"
 
 @interface ViewController ()
+
+@property (nonatomic) NSString * vcStr;
+
 - (IBAction)didClickToPush:(UIButton *)sender;
 
 @end
@@ -21,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.vcStr = @"这是 ViewController 的参数";
     //  模拟图片下载
     [self downloadSimulationPictures];
 }

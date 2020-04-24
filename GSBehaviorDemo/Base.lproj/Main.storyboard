@@ -68,14 +68,43 @@
                     <view key="view" contentMode="scaleToFill" id="J3I-qI-kbZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-a4-KJk">
+                                <rect key="frame" x="96" y="337" width="222" height="222"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="2ue-9V-G8O"/>
+                                    <constraint firstAttribute="height" constant="222" id="Mwl-KX-ASX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-il-ot1">
+                                <rect key="frame" x="179.5" y="428" width="55" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pHj-px-ZYJ"/>
+                                    <constraint firstAttribute="width" constant="55" id="wnL-rK-asw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didClickToDo:" destination="yAB-j2-Ghj" eventType="touchUpInside" id="Xva-wZ-5yh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ieZ-il-ot1" firstAttribute="centerX" secondItem="J3I-qI-kbZ" secondAttribute="centerX" id="9T1-G6-0Ia"/>
+                            <constraint firstItem="hgn-a4-KJk" firstAttribute="centerY" secondItem="J3I-qI-kbZ" secondAttribute="centerY" id="FeY-w5-4ZX"/>
+                            <constraint firstItem="hgn-a4-KJk" firstAttribute="centerX" secondItem="J3I-qI-kbZ" secondAttribute="centerX" id="HtP-xb-SY9"/>
+                            <constraint firstItem="ieZ-il-ot1" firstAttribute="centerY" secondItem="J3I-qI-kbZ" secondAttribute="centerY" id="ia5-jr-ByR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Irc-JD-fC1"/>
                     </view>
                     <navigationItem key="navigationItem" id="j0c-ma-XER"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGe-Ao-eCz" sceneMemberID="firstResponder"/>
+                <exit id="yAB-j2-Ghj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="150"/>
+            <point key="canvasLocation" x="1237.68115942029" y="150"/>
         </scene>
     </scenes>
 </document>
