@@ -21,6 +21,7 @@
 		8684F8092451E20500E1DB79 /* GSBehaviorDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F8082451E20500E1DB79 /* GSBehaviorDataManager.m */; };
 		8684F80C2451E4FC00E1DB79 /* GSBehaviorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F80B2451E4FC00E1DB79 /* GSBehaviorData.m */; };
 		8684F80F2451ECC900E1DB79 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F80E2451ECC900E1DB79 /* NextViewController.m */; };
+		8684F8122451F40600E1DB79 /* NSObject+GSAspectsHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		8684F80B2451E4FC00E1DB79 /* GSBehaviorData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSBehaviorData.m; sourceTree = "<group>"; };
 		8684F80D2451ECC900E1DB79 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		8684F80E2451ECC900E1DB79 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		8684F8102451F40600E1DB79 /* NSObject+GSAspectsHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GSAspectsHook.h"; sourceTree = "<group>"; };
+		8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GSAspectsHook.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				8684F80B2451E4FC00E1DB79 /* GSBehaviorData.m */,
 				8684F8072451E20500E1DB79 /* GSBehaviorDataManager.h */,
 				8684F8082451E20500E1DB79 /* GSBehaviorDataManager.m */,
+				8684F8102451F40600E1DB79 /* NSObject+GSAspectsHook.h */,
+				8684F8112451F40600E1DB79 /* NSObject+GSAspectsHook.m */,
 			);
 			path = GSBehavior;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				8684F80F2451ECC900E1DB79 /* NextViewController.m in Sources */,
 				8684F7D32451D47700E1DB79 /* ViewController.m in Sources */,
 				8684F8062451D71700E1DB79 /* UIViewController+GSHook.m in Sources */,
+				8684F8122451F40600E1DB79 /* NSObject+GSAspectsHook.m in Sources */,
 				8684F7CD2451D47700E1DB79 /* AppDelegate.m in Sources */,
 				8684F7DE2451D47800E1DB79 /* main.m in Sources */,
 				8684F8032451D53300E1DB79 /* GSHook.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "GSBehaviorDataManager.h"
+#import "NSObject+GSAspectsHook.h"
 
 @interface GSBehaviorDataManager ()
 
@@ -44,6 +45,7 @@
     //  线程锁、保证数据完整性
     @synchronized(self) {
         [self.data.datas addObject:model];
+        NSLog(@"打点记录::::%@",[NSObject properties_apsWithObj:model]);
     }
 }
 
@@ -73,7 +75,7 @@
     NSLog(@"Controller:%@ | 进入:%@ | 离开:%@ | 间隔%0.0f秒",data.page_code,data.start_time,data.end_time,seconds/1000.0f);
 }
 
-
+#pragma mark - Lazying...
 - (NSMutableDictionary *)startTimeDic {
     if (!_startTimeDic) {
         _startTimeDic = [NSMutableDictionary new];

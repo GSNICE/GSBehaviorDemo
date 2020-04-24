@@ -52,7 +52,6 @@
 
 @end
 
-
 @implementation GSBehaviorUpLoadData
 
 - (NSDictionary *)dicValue {
@@ -67,7 +66,6 @@
     
     return dic;
 }
-
 
 - (NSDictionary *)properties_aps {
     
